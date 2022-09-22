@@ -1,8 +1,4 @@
-/* You are given a list of colors in 6-digit hexidecimal notation #RRGGBB. Return the brightest of these colors!*/
 
-// function brightest(colors) {
-//   debugger;
-// }
 
 // let arr = ['ABCDEF', '123456'];
 // // console.log(arguments[2]);

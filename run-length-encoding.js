@@ -1,23 +1,17 @@
 var runLengthEncoding = function (str) {
-  let strArr = str.split('');
   let res = [];
-  let end = 0
-  for (let i = 0; i < strArr.length; i++) {
-    let arr = [];
-    let count = 1;
-    for (let j = 0; j < strArr.length-end; j++) {
-          if (strArr[j] === strArr[j + 1]) {
-            count++;
-          }
-        }
-
-    arr.push(count);
-    res.push(arr);
-
-    end += count;
-    i += count;
+  let count = 1;
+  let prev = str[0];
+  for (let i = 1; i < str.length; i++) {
+    if (str[i] !== prev) {
+      res.push([count, prev]);
+      count = 1;
+      prev = str[i];
+    } else {
+      count++;
+    }
   }
+  res.push([count, prev]);
   return res;
 };
-
-console.log(runLengthEncoding('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbb'));
+console.log(runLengthEncoding('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb'));
